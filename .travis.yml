@@ -1,0 +1,16 @@
+language: java
+
+jdk:
+  - openjdk8
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - 'node'
+    - 'node_modules'
+
+install:
+  - mvn install -DskipTests
+
+script:
+  - mvn clean package -DskipTests -X
